@@ -28,6 +28,7 @@ export const GlobalStyles = createGlobalStyle`
     --separator: #28282f;
 
     --twitter-blue: #2aa9e0;
+    --twitter-blue-dark: #258AB6;
   }
 
   @media (max-width: 1080px) {

@@ -1,10 +1,15 @@
 import { createContext, useState, useEffect, ReactNode } from "react";
 import Cookies from "js-cookie";
 
+import LevelUpModal from "../components/LevelUpModal";
+
 import challenges from "../../challenges.json";
 
 interface ChallengesContextProviderProps {
   children: ReactNode;
+  level: number;
+  currentExperience: number;
+  challengesCompleted: number;
 }
 
 interface Challenge {
@@ -20,6 +25,7 @@ interface ChallengesContext {
   activeChallenge: Challenge;
   experienceToNextLevel: number;
   levelUp: () => void;
+  closeModal: () => void;
   startNewChallenge: () => void;
   resetChallenge: () => void;
   completeChallenge: () => void;
@@ -29,16 +35,27 @@ const ChallengesContext = createContext({} as ChallengesContext);
 
 export function ChallengesContextProvider({
   children,
+  ...rest
 }: ChallengesContextProviderProps) {
-  const [level, setLevel] = useState(0);
-  const [currentExperience, setCurrentExperience] = useState(0);
-  const [challengesCompleted, setChallengesCompleted] = useState(0);
+  const [level, setLevel] = useState(rest.level ?? 1);
+  const [currentExperience, setCurrentExperience] = useState(
+    rest.currentExperience ?? 0
+  );
+  const [challengesCompleted, setChallengesCompleted] = useState(
+    rest.challengesCompleted ?? 0
+  );
   const [activeChallenge, setActiveChallenge] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const experienceToNextLevel = Math.pow((level + 1) * 6, 2);
+  const experienceToNextLevel = Math.pow((level + 1) * 5, 2);
 
   function levelUp() {
     setLevel(level + 1);
+    setIsModalOpen(true);
+  }
+
+  function closeModal() {
+    setIsModalOpen(false);
   }
 
   function startNewChallenge() {
@@ -99,12 +116,20 @@ export function ChallengesContextProvider({
         activeChallenge,
         experienceToNextLevel,
         levelUp,
+        closeModal,
         startNewChallenge,
         resetChallenge,
         completeChallenge,
       }}
     >
-      {children}
+      {isModalOpen ? (
+        <>
+          <div style={{ filter: "blur(7.5px)" }}>{children}</div>
+          <LevelUpModal />
+        </>
+      ) : (
+        <>{children}</>
+      )}
     </ChallengesContext.Provider>
   );
 }

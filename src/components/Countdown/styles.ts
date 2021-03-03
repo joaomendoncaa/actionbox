@@ -37,7 +37,7 @@ export const Container = styled.div`
             background: var(--background-main);
             margin: 0 auto;
 
-            z-index: 33;
+            z-index: 1;
         }
     }
 `
