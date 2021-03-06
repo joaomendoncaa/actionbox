@@ -9,12 +9,15 @@ import Countdown from "../components/Countdown";
 import CountdownControls from "../components/CountdownControls";
 import CountdownStartAndStop from "../components/CountdownStartAndStop";
 import ChallengeBox from "../components/ChallengeBox";
+import MenuBar from "../components/MenuBar";
 
 import { ChallengesContextProvider } from "../context/ChallengesContext";
 import { CountdownContextProvider } from "../context/CountdownContext";
 
 import {
-  Container,
+  HomeContainer,
+  MenuWrapper,
+  ContentWrapper,
   Main,
   ControlsContainer,
   CountdownWrapper,
@@ -34,32 +37,37 @@ export default function Home(props: HomeProps) {
       currentExperience={props.currentExperience}
       challengesCompleted={props.challengesCompleted}
     >
-      <Container>
-        <Head>
-          <title>
-            Actionbox | With great discipline comes great achievements
-          </title>
-        </Head>
-        <ExperienceBar />
+      <HomeContainer>
+        <MenuWrapper>
+          <MenuBar />
+        </MenuWrapper>
+        <ContentWrapper>
+          <Head>
+            <title>
+              Actionbox | With great discipline comes great achievements
+            </title>
+          </Head>
+          <ExperienceBar />
 
-        <CountdownContextProvider>
-          <Main>
-            <ControlsContainer>
-              <UserInfo />
+          <CountdownContextProvider>
+            <Main>
+              <ControlsContainer>
+                <UserInfo />
 
-              <CountdownWrapper>
-                <Countdown />
-                <CountdownControls />
-              </CountdownWrapper>
+                <CountdownWrapper>
+                  <Countdown />
+                  <CountdownControls />
+                </CountdownWrapper>
 
-              <CountdownStartAndStop />
-            </ControlsContainer>
-            <ChallengeBoxContainer>
-              <ChallengeBox />
-            </ChallengeBoxContainer>
-          </Main>
-        </CountdownContextProvider>
-      </Container>
+                <CountdownStartAndStop />
+              </ControlsContainer>
+              <ChallengeBoxContainer>
+                <ChallengeBox />
+              </ChallengeBoxContainer>
+            </Main>
+          </CountdownContextProvider>
+        </ContentWrapper>
+      </HomeContainer>
     </ChallengesContextProvider>
   );
 }

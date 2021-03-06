@@ -1,6 +1,14 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const HomeContainer = styled.div`
+    display: flex;
+`
+
+export const MenuWrapper = styled.div`
+    height: 100vh;
+`
+
+export const ContentWrapper = styled.div`
     height: 100vh;
     max-width: 1250px;
     margin: 0 auto;
