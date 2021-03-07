@@ -45,6 +45,7 @@ export const GlobalStyles = createGlobalStyle`
 
   body {
     background: var(--background-main);
+    /* background-image: linear-gradient(black 0%, var(--background-main) 100%); */
     color: var(--text-primary);
   }
 
