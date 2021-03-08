@@ -16,7 +16,6 @@ import { CountdownContextProvider } from "../context/CountdownContext";
 
 import {
   HomeContainer,
-  MenuWrapper,
   ContentWrapper,
   Main,
   ControlsContainer,
@@ -38,9 +37,7 @@ export default function Home(props: HomeProps) {
       challengesCompleted={props.challengesCompleted}
     >
       <HomeContainer>
-        <MenuWrapper>
-          <MenuBar />
-        </MenuWrapper>
+        <MenuBar />
         <ContentWrapper>
           <Head>
             <title>

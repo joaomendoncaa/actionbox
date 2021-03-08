@@ -16,7 +16,6 @@ export const UserRank = styled.span`
 export const SubContainer = styled.div`
     display: flex;
     align-items: center;
-
     width: 90%;
 
     background: var(--background-secondary);
@@ -90,7 +89,7 @@ export const UserLevel = styled.div`
 
 export const LevelBorder = styled.path`
     fill: var(--text-secondary);
-    opacity: .2;
+    opacity: .1;
 `
 
 export const LevelValue = styled.div`
