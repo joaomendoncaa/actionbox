@@ -5,12 +5,6 @@ export const LeaderboardContainer = styled.div`
     display: flex;
 `
 
-export const MenuWrapper = styled.div`
-    height: 100vh;
-
-    position: fixed;
-`
-
 export const ContentWrapper = styled.div`
     width: 100%;
     max-width: 1250px;

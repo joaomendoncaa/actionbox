@@ -4,6 +4,9 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
 
+    position: fixed;
+    z-index: 500;
+
     /* background: var(--background-secondary); */
     background-image: linear-gradient(
         180deg,
@@ -120,4 +123,17 @@ export const Label = styled.span`
     color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.75rem;
+`
+
+interface PlaceholderProps {
+    width?: number
+}
+
+export const Placeholder = styled.div<PlaceholderProps>`
+    height: 100%;
+    width: 224px;
+    
+    ${props => props.width && css`
+        width: calc(${props.width + 'px'});
+    `};
 `

@@ -5,7 +5,6 @@ import LeaderboardItem from "../components/LeaderboardItem";
 
 import {
   LeaderboardContainer,
-  MenuWrapper,
   ContentWrapper,
   LeaderboardHeader,
   LeaderboardHeaderPlaceholder,
@@ -38,9 +37,7 @@ export default function Leaderboard() {
 
   return (
     <LeaderboardContainer>
-      <MenuWrapper>
-        <MenuBar />
-      </MenuWrapper>
+      <MenuBar />
       <ContentWrapper>
         <LeaderboardHeader>
           <header>
