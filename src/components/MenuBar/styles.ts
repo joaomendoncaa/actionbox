@@ -30,7 +30,7 @@ export const MenuArea = styled.div`
 `
 
 interface MenuButtonProps {
-    isSelected: boolean
+    isSelected?: boolean
 }
 
 export const MenuButton = styled.a<MenuButtonProps>`
@@ -123,6 +123,10 @@ export const Label = styled.span`
     color: var(--text-secondary);
     font-weight: 600;
     font-size: 0.75rem;
+`
+
+export const AccountArea = styled.div`
+    align-self: flex-end;
 `
 
 interface PlaceholderProps {

@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import {
   Container,
+  AccountArea,
   MenuButton,
   Label,
   Logo,
@@ -59,6 +60,11 @@ export default function MenuBar() {
             </MenuButton>
           </Link>
         </MenuArea>
+        {/* 
+        <AccountArea>
+          <Label>MY PROFILE</Label>
+          <MenuButton>Sign in</MenuButton>
+        </AccountArea> */}
       </Container>
       <Placeholder width={menuRef.current?.getBoundingClientRect().width} />
     </>
