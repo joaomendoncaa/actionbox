@@ -32,6 +32,8 @@ export const Bar = styled.div<Bar>`
     background-size: 400% 400%;
     animation: shimmer 1.4s linear infinite;
 
+    transition: all 1s ease-in-out;
+
     @keyframes shimmer {
         from {
             background-position: 0% 0%;
