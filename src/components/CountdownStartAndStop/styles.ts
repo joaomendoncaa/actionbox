@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import {Close} from '@styled-icons/evil/Close'
 
 export const Container = styled.div`
 
@@ -49,15 +50,15 @@ export const AbortButton = styled.button`
 
     transition: .1s ease-out;
 
-    img {
-        width: .8rem;
-        height: .8rem;
-        margin-left: 1rem;
-    }
+    gap: 0.5rem;
 
     &:hover {
         color: var(--text-primary);
         background: var(--button-hover-red);
+
+        svg {
+            color: white;
+        }
     }
 `
 
@@ -142,4 +143,10 @@ export const CheckIcon = styled.svg`
             transform: scale(1);
         }
     }
+`
+
+export const CloseIcon = styled(Close)`
+    color: grey;
+    width: 20px;
+    height: 20px;
 `

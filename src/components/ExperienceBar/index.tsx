@@ -14,9 +14,8 @@ import {
 } from "./styles";
 
 export default function ExperienceBar() {
-  const { currentExperience, experienceToNextLevel, level } = useContext(
-    ChallengesContext
-  );
+  const { currentExperience, experienceToNextLevel, level } =
+    useContext(ChallengesContext);
 
   const currentLevelPercentage =
     Math.round(currentExperience * 100) / experienceToNextLevel;
@@ -24,7 +23,7 @@ export default function ExperienceBar() {
   return (
     <Container>
       <BarWrapper>
-        <Bar width={currentLevelPercentage} />
+        <Bar percentage={currentLevelPercentage} />
       </BarWrapper>
       <TextWrapper>
         <span>LEVEL {level} EXPERIENCE</span>

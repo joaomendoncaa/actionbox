@@ -16,11 +16,11 @@ export const BarWrapper = styled.div`
 `
 
 interface Bar {
-    width: number
+    percentage: number
 }
 
 export const Bar = styled.div<Bar>`
-    width: ${props => props.width ? props.width : 0}%;
+    width: ${props => props.percentage ? props.percentage : 0}%;
 
     height: 100%;
     background-image: linear-gradient(

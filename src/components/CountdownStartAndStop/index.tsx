@@ -8,12 +8,12 @@ import {
   AbortButton,
   FinishedCycle,
   CheckIcon,
+  CloseIcon,
 } from "./styles";
 
 export default function CountdownStartAndStop() {
-  const { startCountdown, resetCountdown, isActive, hasFinished } = useContext(
-    CountdownContext
-  );
+  const { startCountdown, resetCountdown, isActive, hasFinished } =
+    useContext(CountdownContext);
 
   function handleClick(event) {
     const action = event.target.dataset.action;
@@ -68,7 +68,7 @@ export default function CountdownStartAndStop() {
           onClick={(event) => handleClick(event)}
         >
           abandon the cycle
-          <img src="images/close.svg" alt="Abort icon" />
+          <CloseIcon />
         </AbortButton>
       )}
     </Container>
