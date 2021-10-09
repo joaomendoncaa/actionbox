@@ -26,6 +26,8 @@ export const StartButton = styled.button`
         width: 1rem;
         height: 1rem;
         margin-left: 1rem;
+
+        pointer-events: none;
     }
 
     &:hover {
@@ -146,6 +148,7 @@ export const CheckIcon = styled.svg`
 `
 
 export const CloseIcon = styled(Close)`
+    pointer-events: none;
     color: grey;
     width: 20px;
     height: 20px;
